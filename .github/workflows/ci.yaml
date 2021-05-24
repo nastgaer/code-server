@@ -434,6 +434,9 @@ jobs:
   trivy-scan-image:
     runs-on: ubuntu-20.04
     needs: docker-amd64
+    # NOTE@jsjoeio: disabling due to a memory issue upstream
+    # See: https://github.com/github/codeql-action/issues/528
+    if: 1 == 2
 
     steps:
       - name: Checkout code
